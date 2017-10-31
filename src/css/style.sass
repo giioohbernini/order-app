@@ -1,0 +1,202 @@
+@charset 'utf-8'
+
+@import url('https://fonts.googleapis.com/css?family=Lato')
+
+$base-color: #00d1b2
+
+body
+  margin: 0
+  padding: 0
+  font-family: Lato,'Monospace'
+
+h1, h2, h3, p
+  color: $base-color
+
+.main
+  max-width: 800px
+  margin: 2em auto
+
+.notfound
+  padding: 2em 0
+  text-align: center
+
+.card-content
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+.card
+  background-color: #ffffff
+  box-shadow: 0px 0px 10px 1px #bdbdbd
+  margin: 1em
+  width: 100%
+
+  &.-modal
+    max-width: 450px
+
+  > .header
+    align-items: center
+    background-color: $base-color
+    box-shadow: 0px 1px 3px 0px #8a8a8a
+    display: flex
+    height: 60px
+    position: relative
+    width: 100%
+
+    .btn
+      background-color: #ffffff
+      border: none
+      color: #31d1b2
+      cursor: pointer
+      height: 100%
+      position: absolute
+      right: 0
+      width: 60px
+
+    &.-exclude
+      background-color: #e40000
+
+    h2
+      color: #ffffff
+      display: inline-block
+      margin: 0 auto
+
+  > .content
+    margin-top: 2em
+    padding: 1em
+
+    .btn
+      background-color: #ffffff
+      border-radius: 50px
+      border: solid 1px #31d1b2
+      color: #31d1b2
+      cursor: pointer
+      transition: all .25s ease
+      font-weight: bold
+      padding: 1em 0
+      width: 100%
+
+
+      &:hover
+        background-color: #31d1b2
+        color: #ffffff
+
+    .item
+      margin: 1em 0
+
+    .label
+      color: #3c3c3c
+      font-weight: bold
+
+    .input
+      background-color: #ffffff
+      border: none
+      box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.88)
+      font-size: 20px
+      margin: .5em 0
+      padding: .8em 
+      width: calc(100% - .8em * 2)
+
+      &:focus
+        outline: none
+        box-shadow: 0px 0px 5px 0px rgb(49, 209, 178)
+
+      &::placeholder
+        color: #ccc  
+
+      &.-select
+        width: 100%
+
+        &:focus
+          outline: none
+          box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.88)
+
+.radio-list
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin-bottom: 1.5em
+
+  > .item
+    align-items: center
+    display: flex
+
+    input[type=radio]
+      display: none
+
+      &:checked ~ label
+        background-color: $base-color
+        color: #ffffff
+
+    label
+      box-shadow: 1px 1px 10px 1px rgba(49, 209, 178, 0.33)
+      border-radius: 50px
+      color: $base-color
+      cursor: pointer
+      margin: .3em .5em
+      min-width: 70px        
+      padding: 1em 3em
+      text-align: center
+      transition: all 0.25s ease
+
+.table-content
+
+  > .table
+    background-color: transparent
+    border-collapse: collapse
+    border-spacing: 2px
+    border-color: #ddd
+    box-shadow: 0px 0px 0px 1px rgb(221, 221, 221)
+    color: #333
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+    width: 100%
+
+    thead
+      background-color: #31d1b2
+      color: #ffffff
+
+    .btn
+      text-decoration: none
+      cursor: pointer
+      padding: 5px 12px
+      font-size: 12px
+
+      &.-table
+        border: solid 1px #31d1b2
+        background-color: #ffffff
+        color: #31d1b2
+        cursor: pointer
+        margin: 0 1px
+        transition: all .25s ease
+
+        &:hover
+          background-color: #31d1b2
+          color: #ffffff
+
+      &.-remove
+        background-color: red
+
+      &.-edit
+        background-color: #00c0ff
+        color: #fff
+
+    td
+      padding: 8px
+      line-height: 1.428571429
+      text-align: center
+      vertical-align: top
+
+    tbody
+      td
+        border-top: 1px solid #ddd
+
+.modal
+  background-color: rgba(0,0,0,0.5)
+  position: fixed
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: center
