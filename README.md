@@ -1,9 +1,9 @@
-# Google Navigation
+# Order App
 
 Demo
 
-- [Component](http://giovannibernini.com.br/google/)
-- [Storybook](http://giovannibernini.com.br/google/storybook/)
+- [Component](http://giovannibernini.com.br/order-app/)
+- Storybook
 
 ## How to use:
 
