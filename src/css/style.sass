@@ -17,6 +17,7 @@ h1, h2, h3, p
   margin: 2em auto
 
 .notfound
+  color: #5b5b5b
   padding: 2em 0
   text-align: center
 
@@ -46,7 +47,7 @@ h1, h2, h3, p
     .btn
       background-color: #ffffff
       border: none
-      color: #31d1b2
+      color: $base-color
       cursor: pointer
       height: 100%
       position: absolute
@@ -55,6 +56,7 @@ h1, h2, h3, p
 
     &.-exclude
       background-color: #e40000
+
 
     h2
       color: #ffffff
@@ -65,21 +67,35 @@ h1, h2, h3, p
     margin-top: 2em
     padding: 1em
 
+    .sure
+      color: #5b5b5b
+      font-weight: bold
+      text-align: center
+      margin-bottom: 2em
+      margin-top: -1em
+
     .btn
       background-color: #ffffff
       border-radius: 50px
-      border: solid 1px #31d1b2
-      color: #31d1b2
+      border: solid 1px $base-color
+      color: $base-color
       cursor: pointer
       transition: all .25s ease
       font-weight: bold
       padding: 1em 0
       width: 100%
 
-
       &:hover
-        background-color: #31d1b2
+        background-color: $base-color
         color: #ffffff
+
+      &.-left
+        border-radius: 50px 0 0 50px
+        width: 50%
+
+      &.-right
+        border-radius: 0 50px 50px 0
+        width: 50%
 
     .item
       margin: 1em 0
@@ -92,6 +108,7 @@ h1, h2, h3, p
       background-color: #ffffff
       border: none
       box-shadow: 0px 0px 5px 0px rgba(181, 181, 181, 0.88)
+      color: #5b5b5b
       font-size: 20px
       margin: .5em 0
       padding: .8em 
@@ -134,7 +151,7 @@ h1, h2, h3, p
       color: $base-color
       cursor: pointer
       margin: .3em .5em
-      min-width: 70px        
+      min-width: 70px
       padding: 1em 3em
       text-align: center
       transition: all 0.25s ease
@@ -152,7 +169,7 @@ h1, h2, h3, p
     width: 100%
 
     thead
-      background-color: #31d1b2
+      background-color: $base-color
       color: #ffffff
 
     .btn
@@ -162,15 +179,15 @@ h1, h2, h3, p
       font-size: 12px
 
       &.-table
-        border: solid 1px #31d1b2
+        border: solid 1px $base-color
         background-color: #ffffff
-        color: #31d1b2
+        color: $base-color
         cursor: pointer
         margin: 0 1px
         transition: all .25s ease
 
         &:hover
-          background-color: #31d1b2
+          background-color: $base-color
           color: #ffffff
 
       &.-remove

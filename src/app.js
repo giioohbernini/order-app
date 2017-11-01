@@ -5,12 +5,14 @@ import Filter from 'components/filter'
 import NewOrder from 'components/neworder'
 import EditOrder from 'components/editorder'
 import Table from 'components/table'
-import users from './utils/users.json'
-import products from './utils/products.json'
-import orders from './utils/orders.json'
 
-import filterOrders from './utils/filter'
-import filterByName from './utils/filter/handleSearch'
+import users from 'utils/users.json'
+import products from 'utils/products.json'
+import orders from 'utils/orders.json'
+
+import filterOrders from 'utils/filter'
+import filterByName from 'utils/filter/handleSearch'
+import submit from 'utils/handleSubmit'
 
 import './css/style.sass'
 
@@ -22,9 +24,8 @@ class App extends Component {
       products: products,
       orders: orders,
       filteredOrders: orders,
-      noResults: false,
+      noResults: false
     }
-
 
     this.handleRemove = (id) => {
       const { [id]: remove, ...orders } = this.state.orders
@@ -40,11 +41,9 @@ class App extends Component {
         <EditOrder
           editId={editId}
           closePortal={closePortal}
-          handleInputEdit={this.handleInputEdit}
           handleSubmit={this.handleSubmit(editId)}
           order={order}
           products={this.state.products}
-          updateInput={this.updateInput}
           users={this.state.users}
         />
       )
@@ -52,19 +51,12 @@ class App extends Component {
 
     this.handleSubmit = (editId) => (e) => {
       e.preventDefault()
-      const td = new Date()
-      const date = `${td.getFullYear()}-${td.getMonth() + 1}-${td.getDate()}`
-      const array = Object.keys(this.state.orders)
-      const key = editId || parseInt(array[array.length - 1]) + 1
+      const orders = submit(e, this.state.orders, editId)
 
-      const orders = {
-        ...this.state.orders,
-        [key]: {
-          user: e.target.user.value,
-          product: e.target.product.value,
-          price: e.target.price.value,
-          date
-        }
+      if (!editId) {
+        e.target.user.value = ''
+        e.target.product.value = ''
+        e.target.price.value = ''
       }
 
       this.setState({
@@ -90,10 +82,6 @@ class App extends Component {
         noResults
       })
     }
-  }
-
-  componentWillMount () {
-  // this.handleFetchUsers()
   }
 
   render () {

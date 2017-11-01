@@ -9,7 +9,7 @@ class EditOrder extends Component {
     this.state = {
       user,
       product,
-      price,
+      price
     }
 
     this.handleUser = (e) => {
@@ -23,9 +23,8 @@ class EditOrder extends Component {
     this.handlePrice = (e) => {
       this.setState({ price: e.target.value })
     }
-
   }
-  render() {
+  render () {
     return (
       <div className='card -modal'>
         <div className='header'>

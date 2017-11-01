@@ -26,7 +26,7 @@ const filterOrder = (type, orders) => {
       if (moment(orders[orderId].date).isSameOrBefore(end) && moment(orders[orderId].date).isSameOrAfter(start)) {
         filteredOrders = {
           ...filteredOrders,
-          orderId: orders[orderId]
+          [orderId]: orders[orderId]
         }
 
         noResults = false

@@ -12,7 +12,8 @@ const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
         <form onSubmit={handleSubmit(editId)}>
           <div className='item'>
             <label className='label'>User:</label>
-            <select name='user' className='input -select'>
+            <select name='user' className='input -select' required>
+              <option value=''>Select an user</option>
               {users.map((user, index) => (
                 <option key={index} value={user}>{user}</option>
               ))}
@@ -20,7 +21,8 @@ const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
           </div>
           <div className='item'>
             <label className='label'>Product:</label>
-            <select name='product' className='input -select'>
+            <select name='product' className='input -select' required>
+              <option value=''>Select a product</option>
               {products.map((product, index) => (
                 <option key={index} value={product}>{product}</option>
               ))}
@@ -28,7 +30,7 @@ const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
           </div>
           <div className='item'>
             <label className='label'>Price:</label>
-            <input name='price' type='text' className='input' />
+            <input name='price' type='text' className='input' required />
           </div>
           <div className='item'>
             <input type='submit' className='btn' value='Save' />

@@ -16,9 +16,9 @@ const ExcludeButton = ({ action }) => (
               <h2>Exclude Order</h2>
             </div>
             <div className='content'>
-              <p>Are you sure about that?</p>
-              <button onClick={closePortal, action}>Yes</button>
-              <button onClick={closePortal}>No</button>
+              <p className='sure'>Are you sure about that?</p>
+              <button className='btn -left' onClick={closePortal, action}>Yes</button>
+              <button className='btn -right' onClick={closePortal}>No</button>
             </div>
           </div>
         </div>
