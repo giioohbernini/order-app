@@ -18,7 +18,7 @@ const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
         <h2>Add new order</h2>
       </div>
       <div className='content'>
-        <form onSubmit={handleSubmit(editId)}>
+        <form onSubmit={handleSubmit(editId, () => toast(container, 'New order added successfully'))}>
           <div className='item'>
             <label className='label'>User:</label>
             <select name='user' className='input -select' required>
@@ -42,7 +42,7 @@ const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
             <input name='price' type='text' className='input' required />
           </div>
           <div className='item'>
-            <input type='submit' className='btn' value='Save' onClick={() => toast(container, 'New order added successfully')} />
+            <input type='submit' className='btn' value='Save' />
           </div>
         </form>
       </div>

@@ -50,7 +50,7 @@ class App extends Component {
       )
     }
 
-    this.handleSubmit = (editId) => (e) => {
+    this.handleSubmit = (editId, toast) => (e) => {
       e.preventDefault()
       const orders = submit(e, this.state.orders, editId)
 
@@ -64,6 +64,8 @@ class App extends Component {
         orders,
         filteredOrders: orders
       })
+
+      toast()
     }
 
     this.handleFilter = (e) => {
