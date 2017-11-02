@@ -2,6 +2,19 @@
 
 import React from 'react'
 import { PortalWithState } from 'react-portal'
+import { ToastContainer } from 'react-toastr'
+import toast from 'utils/toast'
+import PropTypes from 'prop-types'
+
+import '../../css/toast.sass'
+
+let container
+
+const handleAction = (func1, func2) => () => {
+  func1()
+  func2()
+  toast(container, 'Deleted Successfully!!')
+}
 
 const ExcludeButton = ({ action }) => (
   <PortalWithState closeOnOutsideClick closeOnEsc>
@@ -11,13 +24,13 @@ const ExcludeButton = ({ action }) => (
       </button>,
       portal(
         <div className='modal'>
-          <div className='card -modal'>
+          <div className='card -modal animated zoomIn'>
             <div className='header -exclude'>
               <h2>Exclude Order</h2>
             </div>
             <div className='content'>
               <p className='sure'>Are you sure about that?</p>
-              <button className='btn -left' onClick={closePortal, action}>Yes</button>
+              <button className='btn -left' onClick={handleAction(closePortal, action)}>Yes</button>
               <button className='btn -right' onClick={closePortal}>No</button>
             </div>
           </div>
@@ -35,7 +48,7 @@ const EditButton = ({ action }) => (
       </button>,
       portal(
         <div className='modal'>
-          {action(closePortal)}
+          {action(closePortal, container)}
         </div>
        )
     ]}
@@ -44,6 +57,10 @@ const EditButton = ({ action }) => (
 
 const Table = ({ orders, noResults, handleRemove, handleEdit }) => (
   <div className='card'>
+    <ToastContainer
+      ref={ref => { container = ref }}
+      className='toast-top-right'
+    />
     <div className='table-content'>
       <table className='table'>
         <thead>
@@ -81,5 +98,20 @@ const Table = ({ orders, noResults, handleRemove, handleEdit }) => (
     }
   </div>
 )
+
+ExcludeButton.propTypes = {
+  action: PropTypes.func.isRequired
+}
+
+EditButton.propTypes = {
+  action: PropTypes.func.isRequired
+}
+
+Table.propTypes = {
+  orders: PropTypes.object.isRequired,
+  noReults: PropTypes.bool,
+  handleRemove: PropTypes.func.isRequired,
+  handleEdit: PropTypes.func.isRequired
+}
 
 export default Table

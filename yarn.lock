@@ -262,6 +262,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+animate-sass@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/animate-sass/-/animate-sass-0.6.6.tgz#8a490dbbca452c1de063c7f083f9ffcdab882f0e"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -2651,7 +2655,7 @@ dom-converter@~0.1:
   dependencies:
     utila "~0.3"
 
-dom-helpers@^3.2.0:
+dom-helpers@^3.2.0, dom-helpers@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
 
@@ -6740,6 +6744,15 @@ react-test-renderer@^15.6.1:
   dependencies:
     fbjs "^0.8.9"
     object-assign "^4.1.0"
+
+react-toastr@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-toastr/-/react-toastr-3.0.0.tgz#1712aafc613ccc2afbf6c1c11c55d558f5d58328"
+  dependencies:
+    babel-runtime "^6.26.0"
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    lodash "^4.17.4"
 
 react-transition-group@^1.1.2:
   version "1.2.1"

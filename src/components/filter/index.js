@@ -1,6 +1,7 @@
 'use strict'
 
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Filter = ({ handleFilter, handleSearch }) => (
   <div className='card'>
@@ -26,5 +27,10 @@ const Filter = ({ handleFilter, handleSearch }) => (
     </div>
   </div>
 )
+
+Filter.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired
+}
 
 export default Filter

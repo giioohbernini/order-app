@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
+import toast from 'utils/toast'
 
 class EditOrder extends Component {
   constructor (props) {
@@ -26,7 +27,7 @@ class EditOrder extends Component {
   }
   render () {
     return (
-      <div className='card -modal'>
+      <div className='card -modal animated zoomIn'>
         <div className='header'>
           <h2>Edit Order</h2>
           <button className='btn' onClick={this.props.closePortal}>X</button>
@@ -54,7 +55,7 @@ class EditOrder extends Component {
               <input name='price' type='text' value={this.state.price} onChange={this.handlePrice} className='input' />
             </div>
             <div className='item'>
-              <input type='submit' className='btn' value='Save' />
+              <input type='submit' className='btn' value='Save' onClick={() => toast(this.props.container, 'Edited successfully')} />
             </div>
           </form>
         </div>

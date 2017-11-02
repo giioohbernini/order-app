@@ -35,12 +35,13 @@ class App extends Component {
       })
     }
 
-    this.handleEdit = (editId) => (closePortal) => {
+    this.handleEdit = (editId) => (closePortal, container) => {
       const order = this.state.orders[editId]
       return (
         <EditOrder
           editId={editId}
           closePortal={closePortal}
+          container={container}
           handleSubmit={this.handleSubmit(editId)}
           order={order}
           products={this.state.products}

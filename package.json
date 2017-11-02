@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.2.8",
+    "animate-sass": "^0.6.6",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
@@ -64,6 +65,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-portal": "^4.0.0-rc.0",
+    "react-toastr": "^3.0.0",
     "sass-loader": "^6.0.6"
   }
 }

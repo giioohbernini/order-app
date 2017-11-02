@@ -1,5 +1,11 @@
 @charset 'utf-8'
 
+$base-duration: .25s
+$use-zoomIn: true
+$use-bounceOut: true
+$use-bounceIn: true
+
+@import '../../node_modules/animate-sass/animate'
 @import url('https://fonts.googleapis.com/css?family=Lato')
 
 $base-color: #00d1b2
@@ -33,6 +39,7 @@ h1, h2, h3, p
   width: 100%
 
   &.-modal
+    box-shadow: none
     max-width: 450px
 
   > .header

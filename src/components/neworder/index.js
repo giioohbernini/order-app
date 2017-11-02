@@ -1,10 +1,19 @@
 'use strict'
 
 import React from 'react'
+import PropTypes from 'prop-types'
+import { ToastContainer } from 'react-toastr'
+import toast from 'utils/toast'
+
+let container
 
 const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
   return (
     <div className='card'>
+      <ToastContainer
+        ref={ref => { container = ref }}
+        className='toast-top-right'
+      />
       <div className='header'>
         <h2>Add new order</h2>
       </div>
@@ -33,12 +42,19 @@ const NewOrder = ({ users, products, handleSubmit, editId = false }) => {
             <input name='price' type='text' className='input' required />
           </div>
           <div className='item'>
-            <input type='submit' className='btn' value='Save' />
+            <input type='submit' className='btn' value='Save' onClick={() => toast(container, 'New order added successfully')} />
           </div>
         </form>
       </div>
     </div>
   )
+}
+
+NewOrder.propTypes = {
+  users: PropTypes.array.isRequired,
+  products: PropTypes.array.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  editId: PropTypes.bool
 }
 
 export default NewOrder
